@@ -19,3 +19,8 @@ jobs:
 
       - name: run dist folder
         run: npm run start
+        env:
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          PORT: ${{ secrets.PORT }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
