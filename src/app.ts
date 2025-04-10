@@ -12,6 +12,7 @@ const app = express();
 
 app.use(express.json());
 
+console.log("thingflkjsadhfksfdhklasfhkaslfdhjklsdjfh");
 app.use("/api", router);
 
 app.use((err: any, req: any, res: any, next: any) => {

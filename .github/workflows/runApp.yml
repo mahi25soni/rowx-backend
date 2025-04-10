@@ -1,0 +1,21 @@
+name: Run app
+on:
+  push:
+    branches: [dev-github-actions]
+jobs:
+  run-starting-scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        users: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: run dist folder
+        run: npm run start
