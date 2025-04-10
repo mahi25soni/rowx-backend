@@ -1,0 +1,11 @@
+name: first try
+on:
+  push:
+    branches: [dev-github-actions]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, world!"
