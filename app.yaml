@@ -1,5 +1,18 @@
-runtime: nodejs18
-service: row-backend-service # 👈 change this to your custom service name (no spaces, lowercase)
-instance_class: F1
+runtime: nodejs20
+service: rowx-backend-service # 👈 change this to your service name
+
+instance_class: F1 # 👈 smallest, free-tier eligible instance
+automatic_scaling:
+  min_instances: 0 # 👈 don't keep any instances running when idle
+  max_instances: 1 # 👈 max 1 instance to prevent scaling up costs
+  target_cpu_utilization: 0.65
+  target_throughput_utilization: 0.75
+  max_idle_instances: 1
+  min_idle_instances: 0
+
 env_variables:
   NODE_ENV: "production"
+  PORT: "8080"
+  MONGODB_URI: "mongodb+srv://rowxinventive:lhFox053umN5y72X@cluster0.gyslebi.mongodb.net/rowx-backend-db?retryWrites=true&w=majority&appName=Cluster0"
+  EMAIL_USER: "aayehaye.25@gmail.com"
+  EMAIL_PASS: "neud otcz gzlq xwpf"
