@@ -9,3 +9,31 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Hello, world!"
+
+  test-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, world!"
+      - name: Say Hello 2
+        run: echo "Hello, world!"
+      - name: Say Hello 3
+        run: echo "Hello, world!"
+      - name: Say Hello 4
+        run: echo "Hello, world!"
+
+  test-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, world!"
+      - name: Say Hello 2
+        run: echo "Hello, world!"
+      - name: Say Hello 3
+        run: echo "Hello, world!"
+      - name: Say Hello 4
+        run: echo "Hello, world!"
+      - name: Say Hello 5
+        run: echo "Hello, world!"
+      - name: Say Hello 6
+        run: echo "Hello, world!"
