@@ -2,78 +2,253 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Consultation Confirmation</title>
     <style>
+      /* Base styles */
       body {
         font-family: "Arial", sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
+        background-color: #0d0d0d;
+        color: #ffffff;
         margin: 0;
-        padding: 20px;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
       }
-      .container {
-        background-color: #ffffff;
+
+      .email-container {
         max-width: 600px;
-        margin: 0 auto;
+        margin: 20px auto;
+        background-color: #111111;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Header styling */
+      .header {
+        background-color: #1a1a1a;
         padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
       }
+
+      .header img {
+        max-height: 60px;
+        margin-bottom: 10px;
+      }
+
+      .header h1 {
+        color: #bfff00;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      /* Content section */
+      .content {
+        padding: 30px;
+        background-color: #111111;
+      }
+
       h2 {
-        color: #2a2a2a;
+        color: #bfff00;
+        margin-top: 0;
+        font-size: 18px;
+        font-weight: 600;
       }
+
       p {
         line-height: 1.6;
+        margin: 15px 0;
+        color: #cccccc;
+        font-size: 16px;
       }
+
+      /* Appointment details */
+      .appointment-box {
+        background-color: #1a1a1a;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 4px solid #bfff00;
+      }
+
+      .appointment-details {
+        margin-bottom: 5px;
+        font-size: 15px;
+        color: #e0e0e0;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: #ffffff;
+        display: inline-block;
+        width: 100px;
+      }
+
+      /* Button styling */
+      .button-container {
+        text-align: center;
+        margin: 25px 0;
+      }
+
       .button {
         display: inline-block;
-        padding: 12px 25px;
-        margin-top: 20px;
+        padding: 14px 30px;
         font-size: 16px;
-        color: #ffffff;
-        background-color: #007bff;
+        font-weight: 600;
+        color: #0d0d0d;
+        background-color: #bfff00;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
       }
+
       .button:hover {
-        background-color: #0056b3;
+        background-color: #c8ff3f;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(191, 255, 0, 0.4);
       }
+
+      /* Footer section */
       .footer {
-        margin-top: 30px;
-        font-size: 12px;
-        color: #777;
+        padding: 20px 30px;
+        background-color: #1a1a1a;
+        text-align: center;
+        font-size: 14px;
+        color: #999999;
+        border-top: 1px solid #2b2b2b;
       }
-      .footer a {
-        color: #007bff;
+
+      .footer p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #999999;
+      }
+
+      .social-links {
+        margin: 15px 0;
+      }
+
+      .social-icon {
+        display: inline-block;
+        margin: 0 5px;
+        width: 32px;
+        height: 32px;
+        background-color: #bfff00;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 32px;
+      }
+
+      .links {
+        color: #bfff00;
         text-decoration: none;
       }
+
       .footer a:hover {
         text-decoration: underline;
+      }
+
+      /* Responsive adjustments */
+      @media only screen and (max-width: 600px) {
+        .email-container {
+          width: 100%;
+          border-radius: 0;
+        }
+
+        .header,
+        .content,
+        .footer {
+          padding: 20px;
+        }
+
+        .appointment-box {
+          padding: 15px;
+        }
+
+        .detail-label {
+          width: 90px;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h2>Dear <%= fullName %>,</h2>
-      <p>
-        Thank you for expressing interest in RowX's services. We have scheduled
-        your consultation as per the details below:
-      </p>
-      <p>
-        To join the consultation, please click the button below at the scheduled
-        time:
-      </p>
-      <a href="<%= meetLink %>" class="button" target="_blank">Join Meet</a>
-      <p>
-        If you have any questions or need to reschedule, feel free to contact us
-        at
-        <a href="mailto:support@rowx.in">support@rowx.in</a>.
-      </p>
-      <p class="footer">
-        Best regards,<br />
-        The RowX Team<br />
-        <a href="https://rowx.in/">www.rowx.in</a>
-      </p>
+    <div class="email-container">
+      <!-- Header Section -->
+      <div class="header">
+        <h1>Consultation Confirmation</h1>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content">
+        <h2>Dear <%= fullName %>,</h2>
+
+        <p>
+          Thank you for scheduling a consultation with RowX. We're looking
+          forward to discussing how our services can meet your needs.
+        </p>
+
+        <!-- Appointment Details Box -->
+        <div class="appointment-box">
+          <div class="appointment-details">
+            <span class="detail-label">Date:</span> <%= date %>
+          </div>
+          <div class="appointment-details">
+            <span class="detail-label">Time:</span> <%= time %>
+          </div>
+          <div class="appointment-details">
+            <span class="detail-label">Method:</span> Google Meet
+          </div>
+        </div>
+
+        <p>
+          Please ensure you have a stable internet connection and a quiet
+          environment for our discussion. We recommend joining the meeting a few
+          minutes early to test your audio and video.
+        </p>
+
+        <!-- Join Button -->
+        <div class="button-container">
+          <a
+            href="<%= meetLink %>"
+            class="button"
+            target="_blank"
+            style="color: #000000; text-decoration: none"
+            >Join Meeting</a
+          >
+        </div>
+
+        <p>
+          If you need to reschedule or have any questions before our meeting,
+          please don't hesitate to contact us at
+          <a
+            href="mailto:support@rowx.in"
+            style="color: #bfff00; text-decoration: none"
+            >support@rowx.in</a
+          >.
+        </p>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footer">
+        <p>Best regards,<br />The RowX Team</p>
+
+        <p>
+          <a
+            href="https://rowx.in/"
+            style="color: #bfff00; text-decoration: none"
+            >www.rowx.in</a
+          >
+          |
+          <a
+            href="mailto:support@rowx.in"
+            style="color: #bfff00; text-decoration: none"
+            >support@rowx.in</a
+          >
+        </p>
+
+        <p>© 2025 RowX. All rights reserved.</p>
+      </div>
     </div>
   </body>
 </html>
