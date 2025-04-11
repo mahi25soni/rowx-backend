@@ -16,23 +16,30 @@ const contactUsSchema = new mongoose_1.default.Schema({
         trim: true,
         required: true,
     },
-    phone: {
+    contact: {
         type: String,
         trim: true,
+        required: true,
+    },
+    company: {
+        type: String,
     },
     whoAreYou: {
         type: String,
         trim: true,
-        enum: ["Seed Level Startup", "Series Level Startup", "Enterprise"],
     },
-    meetingDate: {
+    selectedDate: {
+        type: String,
+    },
+    selectedTime: {
+        type: String,
+    },
+    meetingAt: {
         type: Date,
     },
-    minValue: {
-        type: Number,
-    },
-    maxValue: {
-        type: Number,
+    timeZone: {
+        type: String,
+        trim: true,
     },
 }, {
     timestamps: true,

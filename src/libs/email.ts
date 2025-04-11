@@ -34,6 +34,8 @@ const send = async (
     fullName: data.fullName,
     email: data.email,
     meetLink: "https://meet.google.com/gyh-ybpe-cbo",
+    date: data.selectedDate,
+    time: data.selectedTime,
   });
   mailOptions.html = emailBody;
 

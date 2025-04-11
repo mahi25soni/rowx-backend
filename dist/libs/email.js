@@ -24,6 +24,8 @@ const send = async (templateName, data, mailOptions) => {
         fullName: data.fullName,
         email: data.email,
         meetLink: "https://meet.google.com/gyh-ybpe-cbo",
+        date: data.selectedDate,
+        time: data.selectedTime,
     });
     mailOptions.html = emailBody;
     // default from field with custom name
