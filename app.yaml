@@ -13,6 +13,6 @@ automatic_scaling:
 env_variables:
   NODE_ENV: "production"
   PORT: "8080"
-  MONGODB_URI: "mongodb+srv://rowxinventive:lhFox053umN5y72X@cluster0.gyslebi.mongodb.net/rowx-backend-db?retryWrites=true&w=majority&appName=Cluster0"
-  EMAIL_USER: "aayehaye.25@gmail.com"
-  EMAIL_PASS: "neud otcz gzlq xwpf"
+  MONGODB_URI: "projects/careful-result-451013/secrets/MONGODB_URI/versions/latest"
+  EMAIL_USER: "projects/careful-result-451013/secrets/EMAIL_USER/versions/latest"
+  EMAIL_PASS: "projects/careful-result-451013/secrets/EMAIL_PASS/versions/latest"
