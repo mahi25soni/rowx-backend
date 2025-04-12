@@ -6,8 +6,12 @@ import ejs from "ejs";
 
 dotenv.config();
 
+// console.log(process.env.EMAIL_USER, process.env.EMAIL_PASS);
+
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.zoho.in",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -40,8 +44,7 @@ const send = async (
   mailOptions.html = emailBody;
 
   // default from field with custom name
-  mailOptions.from =
-    mailOptions.from || `"Mahi Soni" <${process.env.EMAIL_USER}>`;
+  mailOptions.from = mailOptions.from || `"RowX" <${process.env.EMAIL_USER}>`;
 
   try {
     await transporter.sendMail(mailOptions);
@@ -57,7 +60,6 @@ const sendMeetingInvitation = async (data: any) => {
     const mailOptions = {
       to: data.email,
       subject: "Lets have a meet together",
-      from: `RowX`,
     };
     await send("meeting_invitation.ejs", data, mailOptions);
   } catch (error) {
