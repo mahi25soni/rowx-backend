@@ -13,6 +13,3 @@ automatic_scaling:
 env_variables:
   NODE_ENV: "production"
   PORT: "8080"
-  MONGODB_URI: "projects/careful-result-451013/secrets/MONGODB_URI/versions/latest"
-  EMAIL_USER: "projects/careful-result-451013/secrets/EMAIL_USER/versions/latest"
-  EMAIL_PASS: "projects/careful-result-451013/secrets/EMAIL_PASS/versions/latest"
