@@ -22,6 +22,25 @@ app.use(
 
 app.use("/api", router);
 
+console.log(
+  "MONGODB_URI is",
+  process.env.MONGODB_URI
+    ? `available ✅ (${process.env.MONGODB_URI})`
+    : "missing ❌"
+);
+console.log(
+  "EMAIL_USER is",
+  process.env.EMAIL_USER
+    ? `available ✅ (${process.env.EMAIL_USER})`
+    : "missing ❌"
+);
+console.log(
+  "EMAIL_PASS is",
+  process.env.EMAIL_PASS
+    ? `available ✅ (${process.env.EMAIL_PASS})`
+    : "missing ❌"
+);
+
 app.use((err: any, req: any, res: any, next: any) => {
   console.error(`[ERROR] ${req.method} ${req.url} -`, err);
 
@@ -39,4 +58,23 @@ app.use((err: any, req: any, res: any, next: any) => {
 app.listen(PORT, () => {
   dbConnect();
   console.log(`Server is running on port ${process.env.PORT}`);
+  console.log("------------------------------------");
+  console.log(
+    "MONGODB_URI is",
+    process.env.MONGODB_URI
+      ? `available ✅ (${process.env.MONGODB_URI})`
+      : "missing ❌"
+  );
+  console.log(
+    "EMAIL_USER is",
+    process.env.EMAIL_USER
+      ? `available ✅ (${process.env.EMAIL_USER})`
+      : "missing ❌"
+  );
+  console.log(
+    "EMAIL_PASS is",
+    process.env.EMAIL_PASS
+      ? `available ✅ (${process.env.EMAIL_PASS})`
+      : "missing ❌"
+  );
 });

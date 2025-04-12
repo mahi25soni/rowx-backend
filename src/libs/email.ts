@@ -5,9 +5,10 @@ import fs from "fs";
 import ejs from "ejs";
 
 dotenv.config();
-
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtppro.zoho.in",
+  port: 587,
+  secure: false, // use TLS (STARTTLS)
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
