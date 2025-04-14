@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Meeting Scheduled</title>
+    <style>
+      /* Same styling as meeting_invitation.ejs */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #0d0d0d;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .email-container {
+        max-width: 600px;
+        margin: 20px auto;
+        background-color: #111111;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .header {
+        background-color: #1a1a1a;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        color: #bfff00;
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .content {
+        padding: 30px;
+        background-color: #111111;
+      }
+
+      h2 {
+        color: #bfff00;
+        margin-top: 0;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      p {
+        line-height: 1.6;
+        margin: 15px 0;
+        color: #cccccc;
+        font-size: 16px;
+      }
+
+      .appointment-box {
+        background-color: #1a1a1a;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        border-left: 4px solid #bfff00;
+      }
+
+      .appointment-details {
+        margin-bottom: 5px;
+        font-size: 15px;
+        color: #e0e0e0;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: #ffffff;
+        display: inline-block;
+        width: 100px;
+      }
+
+      .footer {
+        padding: 20px 30px;
+        background-color: #1a1a1a;
+        text-align: center;
+        font-size: 14px;
+        color: #999999;
+        border-top: 1px solid #2b2b2b;
+      }
+
+      .footer p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #999999;
+      }
+
+      .footer a {
+        color: #bfff00;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .email-container {
+          width: 100%;
+          border-radius: 0;
+        }
+
+        .header,
+        .content,
+        .footer {
+          padding: 20px;
+        }
+
+        .appointment-box {
+          padding: 15px;
+        }
+
+        .detail-label {
+          width: 90px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header Section -->
+      <div class="header">
+        <h1>New Meeting Scheduled</h1>
+      </div>
+
+      <!-- Main Content -->
+      <div class="content">
+        <h2>Hello RowX Team,</h2>
+
+        <p>
+          A new consultation meeting has been scheduled by a visitor. Here are
+          the details:
+        </p>
+
+        <!-- Appointment Details Box -->
+        <div class="appointment-box">
+          <div class="appointment-details">
+            <span class="detail-label">Name:</span> <%= fullName %>
+          </div>
+          <div class="appointment-details">
+            <span class="detail-label">Email:</span> <%= email %>
+          </div>
+          <div class="appointment-details">
+            <span class="detail-label">Date:</span> <%= date %>
+          </div>
+          <div class="appointment-details">
+            <span class="detail-label">Time:</span> <%= time %>
+          </div>
+          <div class="appointment-details">
+            <span class="detail-label">Meet Link:</span>
+            <a href="<%= meetLink %>" style="color: #bfff00" target="_blank"
+              >Join</a
+            >
+          </div>
+        </div>
+
+        <p>
+          Be prepared to connect on time and offer them the best experience
+          possible. Let’s show them what we’re made of 🚀
+        </p>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footer">
+        <p>– RowX Notifier</p>
+        <p>
+          <a href="https://rowx.in/">www.rowx.in</a> |
+          <a href="mailto:hello@rowx.in">hello@rowx.in</a>
+        </p>
+        <p>© 2025 RowX. All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+</html>

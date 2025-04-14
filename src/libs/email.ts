@@ -57,11 +57,19 @@ const send = async (
 
 const sendMeetingInvitation = async (data: any) => {
   try {
+    // Send email to user
     const mailOptions = {
       to: data.email,
       subject: "Lets have a meet together",
     };
     await send("meeting_invitation.ejs", data, mailOptions);
+
+    // Notify RowX team
+    const mailOptionsRowX = {
+      to: "hello@rowx.in",
+      subject: `New meeting request from ${data.fullName} on ${data?.selectedDate} at ${data?.selectedTime}`,
+    };
+    await send("notify_meeting_rowx.ejs", data, mailOptionsRowX);
   } catch (error) {
     console.error("Error sending mail:", error);
     throw error;
